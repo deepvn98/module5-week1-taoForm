@@ -1,0 +1,43 @@
+<h2>Please fill out the form completely </h2>
+<br><br>
+<div class="form-class">
+    <form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<label for="">You Name  <br>
+    <input  id="name-id" formControlName="name" required>
+</label><span *ngIf="profileForm.controls.name.invalid"> (Khong de trong*)</span><br>
+<label for=""> Age <br>
+    <input  id="age-id" formControlName="age">
+</label><br>
+<label for="">You Address <br>
+    <input  id="address-id" formControlName="address">
+</label><br>
+<label for="">You email <br>
+    <input  id="email-id" formControlName="email">
+</label><br>
+<label for=""> <br>
+    <button  type="submit" [disabled]="!profileForm.valid">Submit</button>
+</label>
+
+</form>
+
+</div>
+<br><br>
+
+<div class="form-class">
+    <table border="1"> 
+        <tr>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Address</th>
+        <th>Email</th>
+        </tr>
+        <tr *ngFor="let item of list">
+            <td>{{item.value.name}}</td>
+            <td>{{item.value.age}}</td>
+            <td>{{item.value.address}}</td>
+            <td>{{item.value.email}}</td>
+        </tr>
+       
+
+    </table>
+</div>
